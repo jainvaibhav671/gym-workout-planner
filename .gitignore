@@ -1,0 +1,50 @@
+# Python-specific
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.pdb
+*.log
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+pip-log.txt
+pip-delete-this-directory.txt
+*.tgz
+*.tar.gz
+
+# Virtual Environment directories
+venv/
+env/
+.venv/
+.env/
+
+# Streamlit-specific
+.streamlit/
+
+# Nix-specific
+result/
+nix-shell
+*.drv
+*.nar
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# MacOS-specific (if you're using macOS)
+.DS_Store
+
+# Windows-specific (if you're using Windows)
+Thumbs.db
+
+.cache/
+file.txt
+db/

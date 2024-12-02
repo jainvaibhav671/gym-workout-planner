@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "gym_trainer"
+version = "0.1.0"
+description = "A Gym Workout Planner, to exercise efficiently and safely"
+authors = ["Vaibhav Jain <jainvaibhav671@gmail.com>"]
+readme = "README.md"
+packages = [{include = "gym_trainer", from = "src"}]
+package-mode = true
+
+[tool.poetry.dependencies]
+python = ">=3.12,<=3.13"
+streamlit = "^1.40.1"
+pandas = "^2.2.3"
+kagglehub = "^0.3.4"
+langchain-groq = "^0.2.1"
+onnxruntime = "^1.20.1"
+google-generativeai = "^0.8.3"
+transformers = "^4.46.3"
+nanoid = "^2.0.0"
+pyautogen = "^0.4"
+vertexai = "^1.71.1"
+chromadb = "^0.5.20"
+markdownify = "^0.14.1"
+pypdf = "^5.1.0"
+
+[tool.poetry.group.development.dependencies]
+black = "^24.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
