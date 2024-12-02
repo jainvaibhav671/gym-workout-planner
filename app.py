@@ -14,10 +14,14 @@ if "user_input" not in st.session_state:
 
 user, manager, groupchat = get_chat_session(st.session_state.chat_history)
 
+def print_chat_history():
+    print([ {"name": ch["name"], "role": ch["role"]} for ch in st.session_state.chat_history ])
+
 def filter_chat_history():
     chats = st.session_state.chat_history
     n_chats = len(chats)
-    user_input_indices = [i for i in range(n_chats) if chats[i]["name"] == "user" and chats[i]["role"] == "user"]
+    print_chat_history()
+    user_input_indices = [i for i in range(n_chats) if chats[i]["name"] == "ragproxyagent" and chats[i]["role"] == "user"]
 
     chat_groups = []
     for i in range(len(user_input_indices)-1):
@@ -74,12 +78,14 @@ if user_input:
     with st.status("Fetching Response", expanded = True, state="running") as status:
         n_chats = len(st.session_state.chat_history)
         if n_chats == 0:
-            user.initiate_chat(manager,
-                                       message=user_input,
-                                       clear_history=False,
-                                       silent=True)
+            user.initiate_chat(
+                manager,
+                message=user_input,
+                clear_history=False,
+                silent=True
+            )
         else:
-            user_prompt = { "name": "user", "role": "user", "content": user_input }
+            user_prompt = { "name": "ragproxyagent", "role": "user", "content": user_input }
             st.session_state.chat_history.extend([user_prompt])
             last_agent, last_message = manager.resume(st.session_state.chat_history)
             last_agent.initiate_chat(manager, message=last_message, clear_history=False)

@@ -22,6 +22,8 @@ vertexai = "^1.71.1"
 chromadb = "^0.5.20"
 markdownify = "^0.14.1"
 pypdf = "^5.1.0"
+ipython = "^8.30.0"
+sentence-transformers = "^3.3.1"
 
 [tool.poetry.group.development.dependencies]
 black = "^24.10.0"
