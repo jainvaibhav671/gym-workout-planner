@@ -52,9 +52,10 @@ Do you have any physical injuries or medical conditions? Mention any specific gu
 else:
     # Chat history display
     st.write("## Gym Workout Planner ☍")
+    print_chat_history()
     chat_groups = filter_chat_history()
     for chat_group in chat_groups:
-        if chat_group[0]["content"] == "":
+        if chat_group[0]["content"] == "" or len(chat_group) <= 1:
             continue
 
         with st.chat_message("human"):
